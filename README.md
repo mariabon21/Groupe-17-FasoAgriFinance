@@ -1,10 +1,11 @@
 # Groupe-17-FasoAgriFinance
 FasoAgriFinance is# 🌾 Project: FasoAgriFinance (v1.0)
-### Developed by Team: Arifaso Tech
 
-This repository contains Group Assignment 1 for the PRG1406 / CS27 Advanced Programming course at the Burkina Institute of Technology (BIT).
 
----
+## 📝 Project Description
+FasoAgriFinance is a Python Command-Line Interface (CLI) application designed to modernize and secure financial management for agricultural cooperatives in Burkina Faso. 
+
+The application integrates advanced Object-Oriented Programming (OOP) concepts, including strict private encapsulation, inheritance hierarchies, input validation classes, and the implementation of special dunder methods.
 
 ## 👥 Team Members & Project Contributions
 
