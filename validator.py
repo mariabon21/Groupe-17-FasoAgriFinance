@@ -44,4 +44,42 @@ def read_bool(prompt: str) -> bool:
         elif answer in ["no", "n", "non"]:
             return False                        # bool
         print(f"  Error: please answer yes or no.")
+# =====================================================================
+# PART 2 — INHERITANCE
+# Parent class, child class, super().__init__()
+# CONTRIBUTOR: SIMPORE Alima
+# =====================================================================
+ 
+class Person:
+    """Parent class — stores the identity shared by all system users."""
+ 
+    def __init__(self, last_name: str, first_name: str, age: int, phone: str):
+        self.last_name  = last_name    # str
+        self.first_name = first_name   # str
+        self.age        = age          # int
+        self.phone      = phone        # str
+ 
+    def full_name(self) -> str:
+        return f"{self.first_name} {self.last_name}"
+ 
+ 
+class FarmerAccount(Person):
+    """
+    Child class — a FarmerAccount IS A Person.
+    Inherits identity from Person and adds farm-specific data and methods.
+    """
+ 
+    total_accounts = 0
+ 
+    def __init__(self, last_name: str, first_name: str, age: int, phone: str,
+                 farm_size: float, crop: str, savings: float, is_coop_member: bool):
+ 
+        super().__init__(last_name, first_name, age, phone)
+ 
+        self.farm_size      = farm_size        # float
+        self.crop           = crop             # str
+        self.savings        = savings          # float
+        self.is_coop_member = is_coop_member   # bool
+ 
+        FarmerAccount.total_accounts += 1
 
