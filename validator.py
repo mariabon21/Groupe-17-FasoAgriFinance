@@ -1,50 +1,47 @@
 # =====================================================================
-# PART 1: THE VALIDATION CLASS (Anti-crash & Input Security)
+# PART 1 — VALIDATED INPUTS
+# str, int, float, bool | while + try/except | correct boolean
 # CONTRIBUTOR: KABORE Albertine
 # =====================================================================
-class Validator:
+
+def read_string(prompt: str) -> str:
+    """Validated string input — re-prompts if the field is left empty."""
+    while True:
+        value = input(prompt).strip()           # str
+        if value:
+            return value
+        print(f"  Error: this field cannot be empty.")
+
+
+def read_int(prompt: str) -> int:
+    """Validated integer input — try/except prevents crash on bad input."""
+    while True:
+        try:
+            return int(input(prompt))           # int — explicit type cast
+        except ValueError:
+            print(f"  Error: please enter a whole number (e.g. 28).")
+
+
+def read_float(prompt: str) -> float:
+    """Validated decimal input — try/except prevents crash on bad input."""
+    while True:
+        try:
+            return float(input(prompt))         # float — explicit type cast
+        except ValueError:
+            print(f"  Error: please enter a decimal number (e.g. 3.5).")
+
+
+def read_bool(prompt: str) -> bool:
     """
-    Groups all keyboard input verification functions.
-    Uses the @staticmethod decorator to integrate cleanly in OOP.
+    Validated boolean input.
+    CORRECT:  input().strip().lower() == "yes"  →  True / False
+    WRONG:    bool(input())  →  always True for any non-empty string
     """
-    
-    @staticmethod
-    def validate_string(prompt: str) -> str:
-        """INSTRUCTION: Ensures the user enters text and does not leave the field empty."""
-        while True:
-            value = input(prompt).strip()
-            if value:
-                return value
-            print("Error: This field cannot be empty.")
+    while True:
+        answer = input(prompt).strip().lower()  # str first
+        if answer in ["yes", "y", "oui", "o"]:
+            return True                         # bool
+        elif answer in ["no", "n", "non"]:
+            return False                        # bool
+        print(f"  Error: please answer yes or no.")
 
-    @staticmethod
-    def validate_integer(prompt: str) -> int:
-        """INSTRUCTION: Prevents the program from crashing if letters are entered instead of an integer."""
-        while True:
-            try:
-                return int(input(prompt))
-            except ValueError:
-                print("Type error: Please enter a valid integer.")
-
-    @staticmethod
-    def validate_float(prompt: str) -> float:
-        """INSTRUCTION: Prevents the program from crashing if letters are entered instead of a decimal."""
-        while True:
-            try:
-                return float(input(prompt))
-            except ValueError:
-                print("Type error: Please enter a decimal number.")
-
-    @staticmethod
-    def validate_boolean(prompt: str) -> bool:
-        """
-        STRICT INSTRUCTION: BOOLEAN TRAP FIX REQUIRED BY THE INSTRUCTOR.
-        Parses the text string instead of doing a simple bool(input()).
-        """
-        while True:
-            response = input(prompt).strip().lower()
-            if response in ['yes', 'y', 'oui', 'o']:
-                return True
-            elif response in ['no', 'n', 'non']:
-                return False
-            print("Error: Please explicitly answer 'Yes' or 'No'.")
