@@ -7,7 +7,7 @@ FasoAgriFinance is a Python Command-Line Interface (CLI) application designed to
 
 
 
-📝 What the program does
+📝 #What the program does
 FasoAgriFinance registers an agricultural producer, validates every input, and generates a financial summary report including:
 
 A membership fee (with 25% discount for cooperative members)
