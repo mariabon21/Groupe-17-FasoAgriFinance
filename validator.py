@@ -147,22 +147,22 @@ def main():
     print(f"{'=' * 58}")
  
     print(f"\n  [ Member Identity ]\n")
-    last_name  = read_string(f"  Last name      : ")          # input 1  — str
-    first_name = read_string(f"  First name     : ")          # input 2  — str
-    age        = read_int   (f"  Age            : ")          # input 3  — int
-    phone      = read_string(f"  Phone          : ")          # input 4  — str
+    last_name  = read_string(f"  Last name      : ")          
+    first_name = read_string(f"  First name     : ")          
+    age        = read_int   (f"  Age            : ")          
+    phone      = read_string(f"  Phone          : ")          
  
     print(f"\n  [ Farm Details ]\n")
-    farm_size      = read_float(f"  Farm size (ha) : ")       # input 5  — float
-    crop           = read_string(f"  Main crop      : ")      # input 6  — str
-    savings        = read_float(f"  Savings (FCFA) : ")       # input 7  — float
-    is_coop_member = read_bool(f"  Cooperative member? (yes/no) : ")  # input 8 — bool
+    farm_size      = read_float(f"  Farm size (ha) : ")       
+    crop           = read_string(f"  Main crop      : ")     
+    savings        = read_float(f"  Savings (FCFA) : ")       
+    is_coop_member = read_bool(f"  Cooperative member? (yes/no) : ")  
  
     print(f"\n  [ Financial Simulation ]\n")
-    yield_per_ha = read_float(f"  Yield per ha (kg)        : ") # input 9  — float
-    price_per_kg = read_float(f"  Price per kg (FCFA)      : ") # input 10 — float
-    annual_rate  = read_float(f"  Annual interest rate (%) : ") # input 11 — float
-    months       = read_int  (f"  Duration (months)        : ") # input 12 — int
+    yield_per_ha = read_float(f"  Yield per ha (kg)        : ") 
+    price_per_kg = read_float(f"  Price per kg (FCFA)      : ") 
+    annual_rate  = read_float(f"  Annual interest rate (%) : ") 
+    months       = read_int  (f"  Duration (months)        : ") 
  
     account = FarmerAccount(
         last_name, first_name, age, phone,
